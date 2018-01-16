@@ -1,0 +1,47 @@
+version: '2'
+networks:
+  microservices:
+    driver: bridge
+services:
+  discovery-server:
+    build: ./discovery-server
+    environment:
+      - HOST_NAME=discovery-server
+      - eureka.client.serviceUrl.defaultZone=http://discovery-server:8761/eureka/
+    ports:
+      - "8761:8761"
+    networks:
+      - microservices
+  customer-manager:
+    build: ./customer-manager
+    environment:
+      - HOST_NAME=customer-manager
+      - eureka.client.serviceUrl.defaultZone=http://discovery-server:8761/eureka/
+    ports:
+      - "8085:8085"
+    networks:
+      - microservices
+    depends_on:
+      - discovery-server
+  product-manager:
+    build: ./product-manager
+    environment:
+      - HOST_NAME=product-manager
+      - eureka.client.serviceUrl.defaultZone=http://discovery-server:8761/eureka/
+    ports:
+      - "8086:8086"
+    networks:
+      - microservices
+    depends_on:
+      - discovery-server
+  gateway:
+    build: ./gateway
+    environment:
+      - HOST_NAME=gateway
+      - eureka.client.serviceUrl.defaultZone=http://discovery-server:8761/eureka/
+    ports:
+      - "8080:8080"
+    networks:
+      - microservices
+    depends_on:
+      - discovery-server

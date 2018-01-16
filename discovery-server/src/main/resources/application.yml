@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: discovery-server
+
+server:
+  port: 8761
+
+eureka:
+  instance:
+    hostname: ${HOSTNAME:localhost}
+    prefer-ip-address: true
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+  server:
+    enable-self-preservation: false # in case of network error Eureka can have its registry emptied
+    wait-time-in-ms-when-sync-empty: 0
+    eviction-interval-timer-in-ms: 20000 # defines interval between eviction job executions
+
