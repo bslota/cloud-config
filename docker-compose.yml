@@ -12,6 +12,15 @@ services:
       - "8761:8761"
     networks:
       - microservices
+  config-server:
+      build: ./config-server
+      environment:
+        - HOST_NAME=config-server
+        - eureka.client.serviceUrl.defaultZone=http://discovery-server:8761/eureka/
+      ports:
+        - "8888:8888"
+      networks:
+        - microservices
   customer-manager:
     build: ./customer-manager
     environment:

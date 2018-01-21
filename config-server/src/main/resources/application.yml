@@ -7,6 +7,8 @@ spring:
         git:
           uri: 'https://github.com/bslota/config-repository'
           clone-on-start: true
+          search-paths: 'config/{application}'
+
 
 eureka:
   client:
@@ -24,3 +26,6 @@ eureka:
 # Server properties
 server:
   port: 8888
+management:
+  security:
+    enabled: false

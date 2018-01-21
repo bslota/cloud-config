@@ -7,6 +7,7 @@ services:
  - Product Manager
  - Customer Manager
  - Gateway
+ - Config Server
  
 # Building
 

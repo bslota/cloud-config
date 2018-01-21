@@ -14,6 +14,7 @@
         <module>customer-manager</module>
         <module>product-manager</module>
         <module>gateway</module>
+        <module>config-server</module>
     </modules>
 
 </project>
