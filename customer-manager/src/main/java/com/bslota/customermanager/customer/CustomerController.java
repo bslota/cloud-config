@@ -25,6 +25,11 @@ public class CustomerController {
         return customerService.findAll();
     }
 
+    @GetMapping(params = "premium")
+    public List<Customer> premiumCustomers() {
+        return customerService.findAllPremium();
+    }
+
     @GetMapping("/{id}")
     public Customer customer(@PathVariable Long id) {
         return customerService.findOne(id);

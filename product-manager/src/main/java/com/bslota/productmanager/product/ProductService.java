@@ -18,10 +18,12 @@ public class ProductService {
 
     private final ProductRepository productRepository;
     private final ProductSubscriptionRepository productSubscriptionRepository;
+    private final ProductConfig productConfig;
 
-    ProductService(ProductRepository productRepository, ProductSubscriptionRepository productSubscriptionRepository) {
+    ProductService(ProductRepository productRepository, ProductSubscriptionRepository productSubscriptionRepository, ProductConfig productConfig) {
         this.productRepository = productRepository;
         this.productSubscriptionRepository = productSubscriptionRepository;
+        this.productConfig = productConfig;
     }
 
 
@@ -56,6 +58,10 @@ public class ProductService {
             final ProductSubscriptionId newId = new ProductSubscriptionId(customerId, product);
             return productSubscriptionRepository.save(new ProductSubscription(newId));
         }
+    }
+
+    List<String> findExclusives() {
+        return productConfig.getExclusives();
     }
 
     private Supplier<NotFoundException> productNotFoundException(String code) {

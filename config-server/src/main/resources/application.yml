@@ -10,8 +10,6 @@ spring:
 eureka:
   client:
     enabled: true
-    healthcheck:
-      enabled: true
     registryFetchIntervalSeconds: 10 # how often to fetch the registry from Eureka server
     instanceInfoReplicationIntervalSeconds: 10 # how often to replicate instance changes to be replicated to Eureka server
     service-url:

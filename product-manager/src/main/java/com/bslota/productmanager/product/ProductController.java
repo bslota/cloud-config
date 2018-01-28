@@ -20,6 +20,11 @@ public class ProductController {
         this.productService = productService;
     }
 
+    @GetMapping("/exclusives")
+    List<String> exclusives() {
+        return productService.findExclusives();
+    }
+
     @GetMapping("/products")
     List<Product> products() {
         return productService.findAll();

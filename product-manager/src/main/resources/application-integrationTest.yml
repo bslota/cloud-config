@@ -1,3 +1,17 @@
+spring:
+  h2:
+    console:
+      enabled: true
+
+server:
+  port: 8086
+
+
 eureka:
   client:
     enabled: false
+
+products:
+  exclusives:
+  - "Assistance"
+  - "24hService"

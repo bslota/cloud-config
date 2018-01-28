@@ -9,10 +9,18 @@ server:
 eureka:
   client:
     enabled: true
-    healthcheck:
-      enabled: true
     registryFetchIntervalSeconds: 10 # how often to fetch the registry from Eureka server
     instanceInfoReplicationIntervalSeconds: 10 # how often to replicate instance changes to be replicated to Eureka server
   instance:
     leaseRenewalIntervalInSeconds: 10 # intervalSeconds between subsequent heartbeats sent to Eureka server
     leaseExpirationDurationInSeconds: 20 # time that Eureka server waits since it received last heartbeat before it can evict this instance
+
+
+products:
+  exclusives:
+  - "Assistance"
+  - "24hService"
+
+management:
+  security:
+    enabled: false
