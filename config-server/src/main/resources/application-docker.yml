@@ -1,0 +1,4 @@
+eureka:
+  client:
+    service-url:
+      default-zone: http://discovery-server:8761/eureka/

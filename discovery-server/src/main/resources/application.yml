@@ -1,13 +1,9 @@
-spring:
-  application:
-    name: discovery-server
-
 server:
   port: 8761
 
 eureka:
   instance:
-    hostname: ${HOSTNAME:localhost}
+    hostname: ${HOST_NAME:localhost}
     prefer-ip-address: true
   client:
     register-with-eureka: false

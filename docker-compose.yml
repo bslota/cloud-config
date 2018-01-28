@@ -21,6 +21,8 @@ services:
         - "8888:8888"
       networks:
         - microservices
+      depends_on:
+        - discovery-server
   customer-manager:
     build: ./customer-manager
     environment:

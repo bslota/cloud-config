@@ -1,6 +1,4 @@
 spring:
-  application:
-    name: config-server
   cloud:
     config:
       server:
@@ -8,7 +6,6 @@ spring:
           uri: 'https://github.com/bslota/config-repository'
           clone-on-start: true
           search-paths: 'config/{application}'
-
 
 eureka:
   client:
