@@ -6,6 +6,11 @@ spring:
           uri: 'https://github.com/bslota/config-repository'
           clone-on-start: true
           search-paths: 'config/{application}'
+    stream:
+      kafka:
+        binder:
+          zkNodes: "localhost:2181"
+          brokers: "localhost:9092"
 
 eureka:
   client:

@@ -56,3 +56,12 @@ services:
       - microservices
     depends_on:
       - discovery-server
+  kafka:
+    image: spotify/kafka
+    ports:
+      - "9092:9092"
+      - "2181:2181"
+    hostname: kafka
+    environment:
+      ADVERTISED_HOST: kafka
+      ADVERTISED_PORT: 9092
