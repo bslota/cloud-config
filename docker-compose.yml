@@ -1,4 +1,4 @@
-version: '2'
+version: '3'
 networks:
   microservices:
     driver: bridge
@@ -58,9 +58,11 @@ services:
       - discovery-server
   kafka:
     image: spotify/kafka
+    networks:
+      - microservices
     ports:
       - "9092:9092"
       - "2181:2181"
     environment:
-      ADVERTISED_HOST: 192.168.99.100
+      ADVERTISED_HOST: kafka
       ADVERTISED_PORT: 9092

@@ -1,3 +1,13 @@
+spring:
+  application:
+    name: product-manager
+  cloud:
+    config:
+      discovery:
+        service-id: config-server
+        enabled: true
+      fail-fast: true
+
 eureka:
   client:
     service-url:
