@@ -1,4 +1,7 @@
 spring:
+  cloud:
+    bus:
+      enabled: false
   h2:
     console:
       enabled: true

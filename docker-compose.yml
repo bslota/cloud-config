@@ -61,7 +61,6 @@ services:
     ports:
       - "9092:9092"
       - "2181:2181"
-    hostname: kafka
     environment:
-      ADVERTISED_HOST: kafka
+      ADVERTISED_HOST: 192.168.99.100
       ADVERTISED_PORT: 9092

@@ -4,6 +4,8 @@ spring:
       enabled: false
       discovery:
         enabled: false
+    bus:
+      enabled: false
 
 eureka:
   client:
