@@ -32,7 +32,7 @@ public class ProductService {
     }
 
     Product findOne(String code) {
-        return Optional.ofNullable(productRepository.findOne(code)).orElseThrow(productNotFoundException(code));
+        return productRepository.findById(code).orElseThrow(productNotFoundException(code));
     }
 
     List<Product> findForCustomer(Long customerId) {

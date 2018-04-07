@@ -3,5 +3,4 @@ spring:
     stream:
       kafka:
         binder:
-          zkNodes: "kafka:2181"
           brokers: "kafka:9092"

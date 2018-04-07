@@ -3,7 +3,6 @@ spring:
     stream:
       kafka:
         binder:
-          zkNodes: "localhost:2181"
           brokers: "localhost:9092"
 
 server:

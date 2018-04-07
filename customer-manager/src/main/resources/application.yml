@@ -6,7 +6,6 @@ spring:
     stream:
       kafka:
         binder:
-          zkNodes: "localhost:2181"
           brokers: "localhost:9092"
 
 server:
@@ -22,7 +21,3 @@ eureka:
     leaseExpirationDurationInSeconds: 20 # time that Eureka server waits since it received last heartbeat before it can evict this instance
 
 premium-email-suffix: gmail.com
-
-management:
-  security:
-    enabled: false

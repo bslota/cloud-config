@@ -37,7 +37,7 @@ public class CustomerService {
     }
 
     Customer findOne(Long id) {
-        return Optional.ofNullable(customerRepository.findOne(id)).orElseThrow(customerNotFound(id));
+        return customerRepository.findById(id).orElseThrow(customerNotFound(id));
     }
 
     Customer createCustomer(Customer from) {
