@@ -21,3 +21,9 @@ eureka:
     leaseExpirationDurationInSeconds: 20 # time that Eureka server waits since it received last heartbeat before it can evict this instance
 
 premium-email-suffix: gmail.com
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: ["health", "info", "refresh"]
